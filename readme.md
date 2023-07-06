@@ -8,9 +8,39 @@
 
 - Creare il booiler dei documenti di base e collegarli.
 
-- Creare il form che permette di mandare i dati inseriti dall'utente sul file diverso da `index.php`.
+- Prendo l'array pre impostato e lo inserisco dentro un file `.json` 
+```
+[
+    {
+        "text": "HTML",
+        "done": true
+    },
+    {
+        "text": "CSS",
+        "done": true
+    },
+    {
+        "text": "Responsive design",
+        "done": true
+    },
+    {
+        "text": "Javascript",
+        "done": true
+    },
+    {
+        "text": "PHP",
+        "done": true
+    },
+    {
+        "text": "Laravel",
+        "done": false
+    }
+]
+```
 
-- Ricevere i dati ed elaborarli e spedirli nel file `.json` 
+- Creao un file `serve.php` e da la prendo i dati dal file `db.json` tramite `file_get_contents()`
+    -  Tramite `json_decode()` converto il file in stringa per farlo comprensibile a js
 
 - Recuperarli tramite axios in vue.js
-    - Elaborarli e fare in modo che stampi a schermo l'input dell'utente
+    - Elaborarli e fare in modo che stampi a schermo l'array predefinito.
+        - (con include `server.php` dentro `index.php` dava : *SyntaxError: JSON.parse: unexpected non-whitespace character after JSON data at line 1 column 191 of the JSON data*)
