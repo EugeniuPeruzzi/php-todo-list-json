@@ -41,6 +41,20 @@ createApp({
             this.list[index].done = !this.list[index].done
         },
 
+        // da aprofondire !!!
+        taskDelete(index) {
+            const delObj =
+            {
+                deleteData: index
+            };
+
+            axios.post(this.getDataUrl, delObj, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            }).then((response) => {
+                this.list = response.data;
+            })
+        },
+
     },
 
 }).mount('#app')

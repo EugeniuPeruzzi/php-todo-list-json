@@ -8,3 +8,11 @@
     text-decoration: line-through underline;
     text-decoration-thickness: 0.1rem;
 }
+
+.pointer {
+    cursor: pointer;
+}
+
+.container-min {
+    min-width: 300px;
+}

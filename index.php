@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -18,17 +17,21 @@
     <!-- initialazing vue app -->
     <div id="app">
         <!-- list output -->
-        <div class="container">
+        <div class="container container-min">
             <div class="row">
+                <div class="title text-center mt-3">
+                    <h1>To Do List</h1>
+                </div>
                 <div class="col-12 mt-5">
                     <ul class="list-group">
                         <li class="list-group-item" v-for="(item , index) in list" :key="index">
                             <div class="content d-flex align-items-center justify-content-between">
-                                <h6 :class="item.done ? 'done-item':''">{{item.text}}</h6>
+                                <h6 @click="taskDone(index)" :class="item.done ? 'done-item':''" class="pointer">{{item.text}}</h6>
                                 <div class="button-container">
                                     <button class="btn btn-sm " @click="taskDone(index)" :class="item.done ? 'btn-outline-warning':'btn-outline-success'">
                                         <i class="fa-solid" :class="item.done ? 'fa-xmark' : 'fa-check' "></i>
                                     </button>
+                                    <button class="btn btn-outline-danger btn-sm mx-2" @click="taskDelete(index)"><i class="fa-solid fa-trash-can"></i></button>
                                 </div>
                             </div>
                         </li> 
@@ -37,7 +40,7 @@
             </div>
         </div>
         <!-- list input -->
-        <div class="container">
+        <div class="container container-min">
             <div class="row">
                 <div class="col">
                     <div class="input-group mt-2">
