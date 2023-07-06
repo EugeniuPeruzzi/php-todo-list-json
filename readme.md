@@ -1,10 +1,10 @@
-# To do lis json
+# To do list json
 
-## Problema :
+### Problema :
 
-***Dobbiamo creare una web-app che permetta di leggere e scrivere una lista di Todo. Deve essere anche gestita la persistenza dei dati leggendoli da, e scrivendoli in un file JSON.**
+***Dobbiamo creare una web-app che permetta di leggere e scrivere una lista di Todo. Deve essere anche gestita la persistenza dei dati leggendoli da, e scrivendoli in un file JSON.*** __
     <sub>Stack: _HTML,CSS,Vue.js(cdn),axios,PHP_ </sub>
-## Soluzione:
+### Soluzione:
 
 - Creare il booiler dei documenti di base e collegarli.
 
