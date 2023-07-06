@@ -9,6 +9,7 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="./style/style.css">
     <title>To do list</title>
 </head>
@@ -19,9 +20,18 @@
         <!-- list output -->
         <div class="container">
             <div class="row">
-                <div class="col mt-5">
+                <div class="col-12 mt-5">
                     <ul class="list-group">
-                        <li class="list-group-item" v-for="(item , index) in list" :ket="index">{{item.text}}</li> 
+                        <li class="list-group-item" v-for="(item , index) in list" :key="index">
+                            <div class="content d-flex align-items-center justify-content-between">
+                                <h6 :class="item.done ? 'done-item':''">{{item.text}}</h6>
+                                <div class="button-container">
+                                    <button class="btn btn-sm " @click="taskDone(index)" :class="item.done ? 'btn-outline-warning':'btn-outline-success'">
+                                        <i class="fa-solid" :class="item.done ? 'fa-xmark' : 'fa-check' "></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </li> 
                     </ul>
                 </div>
             </div>
@@ -31,7 +41,7 @@
             <div class="row">
                 <div class="col">
                     <div class="input-group mt-2">
-                        <input type="text" @keyup.enter="pushTodo" v-model="getInput" placeholder="What to do?" class="form-control">
+                        <input type="text" @keyup.enter="pushTodo" v-model="getInput" placeholder="What to do?" class="form-control p-2">
                         <button class="btn btn-success"@click="pushTodo">Add</button>
                     </div>
                 </div>
@@ -40,7 +50,6 @@
     </div>
     <!-- script -->
     <script type="text/javascript" src="./js/script.js"></script>
-   
 </body>
 
 </html>

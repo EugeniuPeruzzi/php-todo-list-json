@@ -37,6 +37,10 @@ createApp({
             })
         },
 
+        taskDone(index) {
+            this.list[index].done = !this.list[index].done
+        },
+
     },
 
 }).mount('#app')
