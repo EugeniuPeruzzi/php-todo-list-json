@@ -16,14 +16,24 @@
 <body>
     <!-- initialazing vue app -->
     <div id="app">
+        <!-- list output -->
         <div class="container">
             <div class="row">
                 <div class="col mt-5">
                     <ul class="list-group">
                         <li class="list-group-item" v-for="(item , index) in list" :ket="index">{{item.text}}</li> 
-
-
                     </ul>
+                </div>
+            </div>
+        </div>
+        <!-- list input -->
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mt-2">
+                        <input type="text" @keyup.enter="pushTodo" v-model="getInput" placeholder="What to do?" class="form-control">
+                        <button class="btn btn-success"@click="pushTodo">Add</button>
+                    </div>
                 </div>
             </div>
         </div>

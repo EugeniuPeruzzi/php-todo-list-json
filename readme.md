@@ -44,3 +44,15 @@
 - Recuperarli tramite axios in vue.js
     - Elaborarli e fare in modo che stampi a schermo l'array predefinito.
         - (con include `server.php` dentro `index.php` dava : *SyntaxError: JSON.parse: unexpected non-whitespace character after JSON data at line 1 column 191 of the JSON data*)
+
+- Prendere l'imput dal utente e spostarlo in una variabile in js
+
+- Fare la funzione che i dati inseriti dall'utente vengano messi nel file `.json`
+    - Una volta che l'utente ha inserito ne `input` i valori essi vano messi in una variabile in `.js` tramite `v-model`
+    - Nella funzione creata mi porto i valori inseriti 
+        - Spedisco con `axios.post` al file `serve.php`
+
+- In `serve.php` elaboro i dati ricevuti mettendogli a sua volta dentro un array
+    - L'array vine reso leggibile da `.js` tramite `json_encode()`
+        - Con `file_put_contents` inserisco tutto detro il file `.json`
+    
